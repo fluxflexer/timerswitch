@@ -1,0 +1,33 @@
+/* K07 Zentrales Stylesheet der Beispielseiten für Flexible Boxes */ 
+
+/* Normalisierung */ 
+@import url("normalize.css"); 
+
+/* Google Fonts - Dosis für den Titel im Kopfbereich */
+@import url("http://fonts.googleapis.com/css?family=Dosis:400,700");
+
+/* Google Fonts - Open Sans für Überschriften und Fließtext */
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700"); 
+
+/* Icon Font von genericons.com */ 
+@import url("genericons.css"); 
+
+/* Basisgestaltung und Layoutbereiche */ 
+@import url("layout.css");
+
+/* Navigationen */ 
+@import url("navigation.css");
+
+/* Inhalte in main, aside und Co */ 
+@import url("inhalt.css"); 
+
+/* Formulare */ 
+@import url("interaktion.css");
+
+/* Druckversion */ 
+@import url("print.css");
+
+/* GUI */
+@import url("gui.css");
+
+/* eof */

@@ -1,0 +1,206 @@
+/* ---------------------------------------------------------
+   Navigation 
+   ---------------------------------------------------------*/
+
+/* ---------------------------------
+   Kapitel 7  - Basisnavigation   */
+
+nav[role="navigation"] {
+  background: #eee; 
+  color: #333; 
+}
+nav[role="navigation"] ul {
+  padding: 0;
+  margin: 0; 
+}
+nav[role="navigation"] li {
+  display: inline-block;
+  padding: 0;
+  margin: 0; 
+}
+nav[role="navigation"] li a {
+  text-decoration: none; 
+  color: #333;
+  padding: 1em; 
+}
+nav[role="navigation"] li.active a {
+  color: black;
+  text-decoration: underline;
+}
+
+/* ----------------
+   Kapitel 8     */
+
+nav li a:first-child {
+  padding-left: 0;
+}
+
+
+/* ---------------------------------
+     Kapitel 12 - Media Queries   */
+
+body { min-width: 280px; }
+nav[role="navigation"]  div.menubutton { display: none; }
+
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+/* Für Browser mit Media Query Menübutton einblenden */ 
+nav[role="navigation"]  div.menubutton { display: block; }
+
+
+
+  /* ---------------------------------
+     Kapitel 11 - Mobile Navigation */
+
+  /* Vorbereitung  */
+  body { 
+    position: relative; 
+  }
+  header[role="banner"] {
+    box-shadow: 0 2px 6px rgba(51,51,51,0.3);
+  }
+ 
+  /* Button positionieren  */
+  div.menubutton {
+    display: block;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+  }
+
+  /* Button gestalten */ 
+  div.menubutton a {
+    display: block; 
+    color: white;
+    background: #e34c26;
+    background: #f06529;
+    background: #08c;
+    text-decoration: none;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    border: none;
+  }
+  div.menubutton a.shownavlist:after {
+    content: " \25bc";
+    font-size: 0.7rem;
+  }
+  div.menubutton a.hidenavlist:after {
+    content: " \25b2";
+    font-size: 0.7rem; 
+  }  
+  div.menubutton a.hidenavlist {
+    display:none;
+  }
+
+  /* Navigationsliste gestalten */
+  nav[role="navigation"] {
+    padding: 0 1rem; 
+    margin: 0;
+    background: white;
+  }
+  nav[role="navigation"] ul#navlist {
+    max-height: 0;
+    overflow: hidden; 
+    transition: 0.25s;  
+    list-style-type: none;
+    padding: 0; 
+    border-radius: 0 0 1rem 1rem;
+    margin: 0;
+  }
+  nav[role="navigation"] li { 
+    display: block; 
+    border-bottom: 1px solid #ddd; 
+  }
+  nav[role="navigation"] li:last-of-type {
+    border-bottom: 0;
+  }
+
+  /* Gestaltung der Hyperlinks */
+  nav[role="navigation"] li a {
+    display: block; 
+    text-decoration: none;
+    background: #eee;
+    color: #333;
+    padding: 1em; 
+  }
+  nav[role="navigation"] a:hover, 
+  nav[role="navigation"] a:focus {
+    /*background: #c40;
+    color: white;*/
+    text-decoration: underline;
+  }
+  /*nav[role="navigation"] a:active {
+    background: #f50;
+    color: white;
+  }*/
+  nav[role="navigation"] li.active a {
+    background: #08c;
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Navigationsliste einblenden */
+  #menu:target ul#navlist { 
+    max-height: 25em; 
+  }
+  #menu:target a.shownavlist { 
+    display: none; 
+  }
+  #menu:target a.hidenavlist { 
+    display: block; 
+  }
+
+} /* Ende @media */
+
+
+/* ---------------------------------
+     Kapitel 12 - Media Queries   */
+
+@media screen and (min-width: 768px) {
+
+  header[role="banner"] {
+    box-shadow: 0 2px 6px rgba(51,51,51,0.3);
+    margin-bottom: 0.5em;
+  }
+  nav[role="navigation"] {
+    background: white;
+    padding: 0.5em 1em 0 1em;
+    margin: 0;
+  }
+  nav[role="navigation"] ul {
+    position: relative;
+    padding-left: 0; 
+    margin: 0;
+  }
+  nav[role="navigation"] li {
+    list-style-type: none; 
+    display: inline-block;
+  }
+  nav[role="navigation"] li a {
+    display: block;
+    min-width: 6em;
+    background-color: #eee;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.5em;
+    padding: 0.5em 0;
+    margin: 1em 2em 1em 0;
+  }
+  nav[role="navigation"] li.active a {
+    background: #08c;
+    color: #fff;
+    text-decoration: none; 
+  }
+  nav[role="navigation"] a:hover,
+  nav[role="navigation"] a:focus {
+    text-decoration: underline;
+  }
+
+
+} /* Ende @media */
+
+/* eof */ 

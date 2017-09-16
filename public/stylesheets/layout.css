@@ -1,0 +1,147 @@
+/* ---------------------------------------------------------
+   Basisgestaltung und Layoutbereiche
+   ---------------------------------------------------------*/
+
+/* -------------
+   Kapitel 7  */ 
+
+/* In K12 max-width auskommentiert */ 
+body { 
+  background: white;
+  color: #333;
+  /*max-width: 480px;*/  
+  margin: 0 auto; 
+}
+
+/* Kopf- und Fußbereich einfärben */ 
+header[role="banner"], 
+footer[role="contentinfo"] {
+  background: #333;
+  color: white; 
+}
+
+/* Elemente verstecken in visuellen Layouts */  
+.hideme {
+  position: absolute;
+  top: -32768px;
+  left: -32768px;
+}
+
+/* Info: nicolasgallagher.com/micro-clearfix-hack/ */ 
+.cf:before, .cf:after { content: " "; display: table; } 
+.cf:after, .clear { clear: both; } 
+
+
+
+/* -------------
+   Kapitel 8  */ 
+
+/* Padding für Layoutbereiche */ 
+header[role="banner"] , 
+nav[role="navigation"], 
+div[class="wrap"],  
+footer[role="contentinfo"] {
+  padding: 1em;
+}
+
+/* Pageheader und -footer */
+header[role="banner"] h1 {
+  color: white; 
+  padding: 0;
+  margin: 0;
+}
+header[role="banner"] a {
+  color: white;
+  text-decoration: none; 
+}
+header[role="banner"] p {
+  padding: 0;
+  margin: 0;
+}
+footer[role="contentinfo"] a {
+  color: white;
+  text-decoration: none;  
+}
+
+
+/* -------------
+   Kapitel 9  */ 
+
+/* Pageheader mit Dosis */ 
+header[role="banner"] h1 {
+  font-family: Dosis, 'Open Sans', sans-serif; 
+  font-size: 32px; 
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Überschriften und Fließtext gestalten */ 
+html {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 100%; 
+}
+body { font-size: 14px; font-size: 0.875rem; }
+h1   { font-size: 32px; font-size: 2rem; }   
+h2   { font-size: 22px; font-size: 1.375rem; }  
+h3   { font-size: 20px; font-size: 1.25rem; }
+main { line-height: 1.7; }
+
+
+/* Social Media Genericons im Footer */
+ul.socialmedia { 
+  padding: 0; 
+  margin: 0; 
+}
+ul.socialmedia li { 
+  display: inline-block; 
+  margin-right: 2em 
+}
+ul.socialmedia a.genericon { 
+  color: #fff; 
+  font-size: 2em; 
+}
+
+
+/* -------------
+   Kapitel 12  */ 
+
+@media screen and (min-width: 768px) { 
+
+  body { 
+    width: 90%; 
+    max-width: 960px; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    margin: 1em auto; 
+  }
+
+  /* Normaler Hintergrund */ 
+  html {
+    background: #ddd url("grey-bg.png") repeat left top; 
+  }
+  div.wrap { 
+    overflow: hidden; 
+  } 
+
+  footer[role="contentinfo"] {
+    clear:both;
+  } 
+
+
+} /* Ende @media */ 
+
+@media screen and (min-width: 1140px) {
+
+   /* Füllender Hintergrund */ 
+  html {
+    min-height: 100%; 
+    background-color: #bbcddb; 
+    background-image: url("bigpicture.jpg");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover; 
+  }
+} /* Ende @media */ 
+
+
+/* eof */
+

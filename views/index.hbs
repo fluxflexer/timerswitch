@@ -1,0 +1,54 @@
+
+
+
+<body class="startseite" id="menu">
+<!-- pageheader -->
+
+{{>header}}
+{{>navigation}}
+
+
+<!-- <div> maybe useful as hook for CSS, especially, if <main> is followed by an <aside> -->
+<div class="wrap">
+    <!-- <main> is useful for ARIA, but not sectioning -->
+    <main role="main">
+        <!-- <section> begins new section for outline algorithm, ID maybe useful as fragment identifier -->
+        <section id="content">
+            <!-- header for this section, without <section> it would technically be a pageheader -->
+            <header class="cf">
+                <h2>Startseite</h2>
+
+                <div class="headertext">
+
+
+                </div>
+
+
+            </header>
+
+            <article id="a1">
+                <h3 lang="en">Responsive</h3>
+
+            </article>
+
+            <article id="a2">
+                <h3 lang="en">Web</h3>
+
+            </article>
+
+            <article id="a3">
+                <h3 lang="en">Design</h3>
+
+            </article>
+
+            <article id="a4" class="clear">
+                <h3>Der Ausweg</h3>
+
+            </article>
+
+        </section>
+    </main>
+</div> <!-- Ende .wrap -->
+
+
+</body>

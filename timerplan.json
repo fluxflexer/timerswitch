@@ -1,0 +1,40 @@
+{
+  "timer": [
+    {
+      "client": "TST_1",
+      "method": "mqtt",
+
+      "defaultState": "off",
+      "activeState": "on",
+      "schedules":[
+        {
+          "month": "*",
+          "dayOfWeek": [1,2,3,4,5],
+          "time": ["18:02 - 19:59", "12:00 - 13:00"]
+            },
+            {
+          "month": "*",
+          "dayOfWeek": [6,7],
+          "time": ["15:18 - 15:20", "12:00 - 13:00"]
+            }]
+     },
+    {
+      "client": "TST_2",
+      "method": "mqtt",
+
+      "defaultState": "off",
+      "activeState": "on",
+      "schedules":[
+        {
+          "month": "*",
+          "dayOfWeek": [1,2,3,4,5],
+          "time": ["18:02 - 19:59", "12:00 - 13:00"]
+        },
+        {
+          "month": "9,11,12",
+          "dayOfWeek": "6",
+          "time": ["15:44 - 17:00", "12:00 - 13:00"]
+        }]
+    }
+  ]
+}

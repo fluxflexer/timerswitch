@@ -1,0 +1,38 @@
+
+{
+  "schedules": [
+    {
+      "name": "Test_LED",
+      "client": "TST_1",
+      "state": "on",
+      "time": "30 * * * *",
+      "type": "htmlrequest",
+      "host": "192.168.1.147",
+      "port": "80",
+      "path": "/control?cmd=GPIO,5,1"
+    },
+    {
+      "name": "Test_LED",
+      "client": "TST_1",
+      "state": "off",
+      "time": "31 * * * *",
+      "type": "htmlrequest",
+      "host": "192.168.1.147",
+      "port": "80",
+      "path": "/control?cmd=GPIO,5,0"
+    }
+
+
+  ],
+  "inits":[
+    {
+      "name": "Vent1off",
+      "client": "TST_1",
+      "state": "off",
+      "type": "htmlrequest",
+      "host": "192.168.1.147",
+      "port": "80",
+      "path": "/control?cmd=GPIO,5,0"
+    }
+  ]
+}

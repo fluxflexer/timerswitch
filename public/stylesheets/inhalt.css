@@ -1,0 +1,101 @@
+/* ---------------------------------------------------------
+   Inhalte in main, aside und Co
+   ---------------------------------------------------------*/
+
+/* -------------
+   Kapitel 06  */ 
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+/* -------------
+   Kapitel 07  */ 
+
+main header h2 {
+  line-height: 1; 
+  padding: 0;
+  margin: 0; 
+}
+.startseite main header h2 { 
+  margin-bottom: 1em;
+}
+
+
+/* -------------
+   Kapitel 10  */ 
+
+main img {
+border-radius: 0.5em;
+
+-webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+   -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+main h3, aside h3  { 
+  color: #444;
+  line-height: 1; 
+  padding-top: 0.5em;
+  border-top: 1px solid #ddd;
+  margin: 1.5em 0 0.25em 0;
+}
+main p, aside p { 
+  margin-top: 0; 
+  margin-bottom: 1em; 
+}
+main p.artikelinfo, aside p.artikelinfo { 
+  font-size: 13px; 
+  font-size: 0.8125rem;
+  color: #999;
+}
+main a, aside a { 
+  color: #08c; 
+  text-decoration: none; 
+}
+main ul, aside ul  {
+  list-style-type: square;
+  padding: 0;
+  margin: 1em 0 2em 2em;
+}
+
+/* -------------
+   Kapitel 12  */ 
+
+@media screen and (min-width: 768px) {
+  .startseite main header .headertext { 
+    float: left; 
+    width: 70%; 
+  } 
+
+  .startseite main header .headerbild { 
+    float: right; 
+    width: 25%; 
+  } 
+
+  .startseite #a1 { float: left; width: 30%; margin: 0;}
+  .startseite #a2 { float: left; width: 30%; margin: 0 5%;}
+  .startseite #a3 { float: right; width: 30%; margin: 0; }
+
+  .news main {
+    float: left;
+    width: 70%;
+  }
+  .news aside {
+    float: right;
+    width: 25%;
+    margin-top: 75px;
+  }
+  .news aside h3 {
+    margin-top: 0;
+  }
+
+} /* Ende @media */
+
+
+
+/* eof */

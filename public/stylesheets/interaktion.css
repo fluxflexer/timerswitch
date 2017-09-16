@@ -1,0 +1,51 @@
+/* ---------------------------------------------------------
+   Formulare 
+   ---------------------------------------------------------*/
+
+/* -------------
+   Kapitel 10 */
+
+form#kontakt {
+  line-height: 1;
+  background-color: #f9f9f9;
+  -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+          box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-bottom: 2em; 
+}
+#kontakt label {
+  display: block;
+  line-height: 1.7;
+  cursor: pointer;
+}
+input[type="text"],
+input[type="email"],
+input[type="submit"],
+textarea {
+  min-width: 12em;
+  padding: 0.25em;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  margin-bottom: 1em;
+}
+textarea {
+  min-width: 18em;
+}
+input[type="submit"] {
+  background-color: #08c;
+  color: white;
+  padding: 1em;
+}
+input[type="submit"]:hover, 
+input[type="submit"]:focus {
+  background-color: #005985;
+  text-decoration: underline;
+}
+input[type="submit"]:active {
+  background-color: darkorange;
+}
+
+
+/* eof */

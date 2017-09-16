@@ -1,0 +1,56 @@
+
+{
+  "schedules": [
+    {
+      "name": "Vent1on",
+      "client": "VTL_1",
+      "state": "on",
+      "time": "00 * * * *",
+      "type": "htmlrequest",
+      "host": "192.168.1.101",
+      "port": "80",
+      "path": "/control?cmd=GPIO,1,0"
+    },
+    {
+      "name": "Vent1off",
+      "client": "VTL_1",
+      "state": "off",
+      "time": "20 * * * *",
+      "type": "htmlrequest",
+      "host": "192.168.1.101",
+      "port": "80",
+      "path": "/control?cmd=GPIO,1,1"
+    },
+    {
+      "name": "Vent2on",
+      "client": "VTL_2",
+      "state": "Undef",
+      "time": "00 * * * *",
+      "type": "htmlrequest",
+      "host": "192.168.1.102",
+      "port": "80",
+      "path": "/control?cmd=GPIO,1,0"
+    }
+  ],
+  "inits":[
+    {
+      "name": "Vent1off",
+      "client": "VTL_1",
+      "state": "off",
+      "type": "htmlrequest",
+      "host": "192.168.1.101",
+      "port": "80",
+      "path": "/control?cmd=GPIO,1,1"
+    },
+    {
+      "name": "Vent1on",
+      "client": "VTL_2",
+      "state": "Undef",
+      "time": "00 * * * *",
+      "type": "htmlrequest",
+      "host": "192.168.1.102",
+      "port": "80",
+      "path": "/control?cmd=GPIO,1,0"
+    }
+  ]
+}
