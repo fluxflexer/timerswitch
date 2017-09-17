@@ -2,39 +2,23 @@
   "timer": [
     {
       "client": "TST_1",
-      "method": "mqtt",
-
+      "protocol": "ESPEasy",
+      "host": "192.168.1.143",
+      "port": "80",
+      "onMessage": "/control?cmd=GPIO,5,1",
+      "offMessage": "/control?cmd=GPIO,5,0",
       "defaultState": "off",
       "activeState": "on",
       "schedules":[
         {
           "month": "*",
           "dayOfWeek": [1,2,3,4,5],
-          "time": ["18:02 - 19:59", "12:00 - 13:00"]
+          "time": ["18:02 - 19:59", "20:00 - 21:00"]
             },
             {
           "month": "*",
           "dayOfWeek": [6,7],
-          "time": ["15:18 - 15:20", "12:00 - 13:00"]
+          "time": ["21:25 - 21:26", "21:28 - 22:00"]
             }]
-     },
-    {
-      "client": "TST_2",
-      "method": "mqtt",
-
-      "defaultState": "off",
-      "activeState": "on",
-      "schedules":[
-        {
-          "month": "*",
-          "dayOfWeek": [1,2,3,4,5],
-          "time": ["18:02 - 19:59", "12:00 - 13:00"]
-        },
-        {
-          "month": "9,11,12",
-          "dayOfWeek": "6",
-          "time": ["15:44 - 17:00", "12:00 - 13:00"]
-        }]
-    }
-  ]
+     }]
 }
