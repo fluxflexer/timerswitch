@@ -1,38 +1,47 @@
+[
+        {
+          "name": "Shd_Vent1_weekdays",
+          "state": "undef",
+          "month": "*",
+          "dayOfWeek": [1,2,3,4,5,7],
+          "time": [
+            "07:30 - 07:45",
+            "12:00 - 12:15",
+            "15:23 - 18:32",
+            "18:35 - 21:43",
+            "21:45 - 21:45"
+          ],
+          "clients":[
+            {
+              "clientName": "TST_2",
+              "chanelName": "DO_1"
+            }
 
-{
-  "schedules": [
-    {
-      "name": "Test_LED",
-      "client": "TST_1",
-      "state": "on",
-      "time": "30 * * * *",
-      "type": "htmlrequest",
-      "host": "192.168.1.147",
-      "port": "80",
-      "path": "/control?cmd=GPIO,5,1"
-    },
-    {
-      "name": "Test_LED",
-      "client": "TST_1",
-      "state": "off",
-      "time": "31 * * * *",
-      "type": "htmlrequest",
-      "host": "192.168.1.147",
-      "port": "80",
-      "path": "/control?cmd=GPIO,5,0"
-    }
+          ]
+
+        },
+  {
+    "name": "Shd_Vent1_weekend",
+    "state": "undef",
+    "month": "*",
+    "dayOfWeek": [6],
+    "time": [
+      "07:30 - 07:45",
+      "12:00 - 12:15",
+      "15:23 - 16:00",
+      "20:00 - 21:30"
+    ],
+    "clients":[
+
+      {
+        "clientName": "TST_2",
+        "chanelName": "DO_2"
+      }
+
+    ]
+
+  }
+]
 
 
-  ],
-  "inits":[
-    {
-      "name": "Vent1off",
-      "client": "TST_1",
-      "state": "off",
-      "type": "htmlrequest",
-      "host": "192.168.1.147",
-      "port": "80",
-      "path": "/control?cmd=GPIO,5,0"
-    }
-  ]
-}
+
