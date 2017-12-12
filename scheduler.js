@@ -17,10 +17,10 @@ module.exports.eventEmitter = eventEmitter;
 
 
 
-module.exports.InitScheduler = function() {
+module.exports.InitScheduler = function(timerplan) {
 
     var schedule = require('node-schedule');
-    var timerplan = require('./timerplan.json');        //timerplan laden
+
 
 //console.log(timerplan.timer[0]);
 
@@ -35,6 +35,8 @@ module.exports.InitScheduler = function() {
 
 
 };
+
+
 
 function updateStates(timerplan){
 
@@ -115,7 +117,7 @@ function updateStates(timerplan){
 
 function setState(timer){
 
-    console.log(timer.client + "=" + timer.resultstate)
+    console.log(timer.client + "=" + timer.resultstate);
 switch (timer.protocol){
     case "ESPEasy":
         var options= {};
@@ -124,16 +126,21 @@ switch (timer.protocol){
     if (timer.resultstate===timer.activeState){
 
 
-        options.path=timer.onMessage;
+        if (timer.resultstate =! timer.currentstate) {
 
+            timer.currentstate = timer.activeState;
+           // eventEmitter.emit('statechange');
+            options.path = timer.onMessage;
+
+        }
 
     }
     else{
         options.path=timer.offMessage;
 
     }
-        console.log(options);
-        callUrl(options)
+        //console.log(options);
+        callUrl(options);
 
     break;
 }

@@ -10,30 +10,23 @@ var users = require('./routes/users');
 
 states = {};
 
-
-
-var scheduler = require('./scheduler.js');
-
-scheduler.InitScheduler();
-
-var ActStates =scheduler.States;
-
-// var timevalue = "22:55";
 //
-// var splitter= timevalue.split(":");
-// var hours= parseInt(splitter[0]);
-// var minutes = parseInt(splitter[1])/60;
-// var result = hours + minutes
+//
+// var scheduler = require('./scheduler.js');
+// var schedules = require('./schedules.json');        //timerplan laden
+// scheduler.InitScheduler(timerplan);
+//
+// var ActStates =scheduler.States;
 
-// console.log(result);
+var processor = require('./processor.js');
+processor.InitProcessor();
 
 
 
-scheduler.eventEmitter.on('statechange', function(Command){
-
-    console.log(ActStates);;
-
-})
+// scheduler.eventEmitter.on('statechange', function(actclient){
+//
+//     console.log(actclient);
+// });
 
 var app = express();
 
@@ -59,7 +52,7 @@ app.use(function (req, res, next) {
     if(!res.locals.partials)res.local.partials = {};
     next();
 
-})
+});
 
 
 // catch 404 and forward to error handler

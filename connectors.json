@@ -1,0 +1,39 @@
+ [
+        {
+          "name": "Shd_Vent1_weekdays",
+          "type": "logical",
+          "inputs":[
+
+            {"di1": "Shd_Vent1_weekdays"}
+
+              ],
+
+          "output":
+              {
+                "clientName": "TST_2",
+                "pinName": "DO_1"
+              },
+          "logic": "1 and di1"
+
+
+        },
+   {
+     "name": "Shd_Vent1_weekends",
+     "type": "logical",
+     "inputs":[
+       {
+         "di1": "Shd_Vent1_weekends"
+       }
+     ],
+
+     "output":
+     {
+       "clientName": "TST_2",
+       "pinName": "DO_1"
+     },
+     "logic": "1 and di1"
+
+
+   }
+
+          ]

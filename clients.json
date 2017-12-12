@@ -1,0 +1,51 @@
+ [
+   {
+     "name": "TST_2",
+     "Type": "switch",
+     "caption": "Test 2",
+     "description": "",
+     "hardware": "",
+     "software": "",
+     "protocol": "ESPEasy",
+     "host": "192.168.1.147",
+     "port": "80",
+     "type": "switch",
+     "defaultState": "inactive",
+     "currentState": "undef",
+     "chanels": [
+       {
+         "name": "DO_1",
+         "activeCommand": "/control?cmd=GPIO,5,1",
+         "inactiveCommand": "/control?cmd=GPIO,5,0"
+       },
+       {
+         "name": "DO_2",
+         "activeCommand": "/control?cmd=GPIO,4,1",
+         "inactiveCommand": "/control?cmd=GPIO,4,0"
+       }
+     ]
+   },
+      {
+        "name": "VTL_1",
+        "Type": "switch",
+        "caption": "Ventilator 1",
+        "description": "",
+        "hardware": "",
+        "software": "",
+        "protocol": "ESPEasy",
+        "host": "192.168.1.101",
+        "port": "80",
+        "type": "switch",
+        "defaultState":"inactive",
+        "currentState": "undef",
+        "chanels":[
+          {
+            "name": "DO_1",
+            "activeCommand": "/control?cmd=GPIO,1,0",
+            "inactiveCommand": "/control?cmd=GPIO,1,1"
+          }
+
+]}
+
+
+]
