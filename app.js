@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-states = {};
+
 
 //
 //
@@ -18,8 +18,14 @@ states = {};
 //
 // var ActStates =scheduler.States;
 
-var processor = require('./processor.js');
-processor.InitProcessor();
+var Processor = require('./processor.js');
+Processor.InitClients();
+Processor.InitStates();
+Processor.InitSchedules();
+
+setTimeout(function(){
+    Processor.InitMqttProcessor()},3000
+);
 
 
 

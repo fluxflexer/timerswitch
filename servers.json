@@ -1,0 +1,15 @@
+[
+  {
+    "name": "HOMEHUB",
+    "Caption": "Homehub MQTT Broker",
+    "hostname": "lothlorien",
+    "ip": "192.168.1.143",
+    "port": "1883",
+    "type": "MQTTBROKER",
+    "Username": "homehub",
+    "Password": "mos6510",
+    "protocol": "mqtt"
+  }
+
+
+]

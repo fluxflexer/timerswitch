@@ -12,6 +12,7 @@
      "type": "switch",
      "defaultState": "inactive",
      "currentState": "undef",
+     "heartbeat": "undef",
      "chanels": [
        {
          "name": "DO_1",
@@ -33,19 +34,46 @@
         "hardware": "",
         "software": "",
         "protocol": "ESPEasy",
-        "host": "192.168.1.101",
+        "host": "192.168.1.104",
         "port": "80",
         "type": "switch",
         "defaultState":"inactive",
         "currentState": "undef",
+        "diagnostic":[
+          {
+            "heartbeat": "undef"
+          }
+        ],
+
         "chanels":[
           {
             "name": "DO_1",
             "activeCommand": "/control?cmd=GPIO,1,0",
             "inactiveCommand": "/control?cmd=GPIO,1,1"
           }
-
-]}
+        ]
+      },
+   {
+     "name": "WPRC_1",
+     "Type": "RC Wallplug",
+     "caption": "Funksteckdosen-HUB 1",
+     "description": "",
+     "hardware": "NodeMCU",
+     "software": "",
+     "protocol": "MQTT",
+     "MQTTClient": "WPRC_1",
+     "MQTTServer": "HOMEHUB",
+     "defaultState":"inactive",
+     "currentState": "undef",
+     "heartbeat": "undef",
+     "chanels":[
+       {
+         "name": "WP_1",
+         "activeCommand": "/WP1=on",
+         "inactiveCommand": "/WP1_off"
+       }
+     ]
+   }
 
 
 ]
