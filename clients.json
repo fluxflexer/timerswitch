@@ -74,6 +74,27 @@
        }
      ]
    }
-
+ ,
+   {
+     "name": "DUST_HH",
+     "Type": "Handheld Dust Sensor",
+     "caption": "Staubsensor (Mobil)",
+     "description": "",
+     "hardware": "NodeMCU",
+     "software": "",
+     "protocol": "MQTT",
+     "MQTTClient": "DUST_HH",
+     "MQTTServer": "HOMEHUB",
+     "defaultState":"inactive",
+     "currentState": "undef",
+     "heartbeat": "undef",
+     "chanels":[
+       {
+         "name": "DST_Sensor",
+         "activeCommand": "/WP1=on",
+         "inactiveCommand": "/WP1_off"
+       }
+     ]
+   }
 
 ]

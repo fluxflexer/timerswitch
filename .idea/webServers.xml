@@ -10,6 +10,14 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="3e6257eb-82a7-4077-a7ce-8ccc9bbb246d" name="ringserver" url="http://ringserver.de">
+        <fileTransfer host="ringserver.de" port="3791" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="3791" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

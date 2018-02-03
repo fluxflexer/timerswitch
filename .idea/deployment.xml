@@ -5,7 +5,14 @@
       <paths name="lothlorien">
         <serverdata>
           <mappings>
-            <mapping deploy="/MQTT_Controller" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/Dustcontroller" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="ringserver">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

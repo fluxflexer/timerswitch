@@ -10,6 +10,7 @@ var users = require('./routes/users');
 
 
 
+
 //
 //
 // var scheduler = require('./scheduler.js');
@@ -19,12 +20,14 @@ var users = require('./routes/users');
 // var ActStates =scheduler.States;
 
 var Processor = require('./processor.js');
+Processor.InitInfluxDB();
 Processor.InitClients();
 Processor.InitStates();
 Processor.InitSchedules();
-
+Processor.InitMqttProcessor()
 setTimeout(function(){
-    Processor.InitMqttProcessor()},3000
+    var States= Processor.QueryStates()   },3000
+
 );
 
 
@@ -78,6 +81,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 
 

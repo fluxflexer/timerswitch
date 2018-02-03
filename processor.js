@@ -5,8 +5,53 @@ var servers ={};
 var mqtt = require('mqtt');
 var clients = {};
 var schedules = {};
+var DustDensity=[];
+var Influx = require('influx');
 
 
+
+
+setInterval(SendDust, 10000, DustDensity);
+
+function SendDust(Density){
+    var sum = 0;
+    for( var i = 0; i < Density.length; i++ ){
+        sum += parseInt( Density[i], 10 ); //don't forget to add the base
+    }
+
+    var avg = sum/Density.length;
+
+console.log("Writing to InfluxDB");
+try {
+    InfluxClient.writePoints([
+        {
+            measurement: 'HH_DUST',
+
+            fields: {value:  avg}
+        }
+    ])
+} catch (err){
+        console.error('Influx write Error! ${err.stack}');
+    }
+
+
+    //const request = require('request');
+
+
+    //request("http://www.ringserver.de/cgi-bin/gettemp.pl?DUST_HH="+parseInt(avg*100) ,function(error, response, body){
+
+        // console.log('error:', error); // Print the error if one occurred
+        // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+        // console.log('body:', body); // Print the HTML for the Google homepage.
+    //}
+   //);
+   // console.log(avg);
+};
+
+
+module.exports.QueryStates= function(){
+    return states;
+}
 
 module.exports.InitClients =function(){
     clients = require('./clients.json');
@@ -73,10 +118,20 @@ function processMQTT(topic,message){
             console.log("heartbeat");
             states[actClient[0].name].diagnostic.heartbeat =Date.now();
             console.log("Client = " + actClient[0].name + ", Type = " +actType + ", Value = " + message);
-            console.log("Client ="  + states[actClient[0].name] + ", State = " + states[actClient[0].name].diagnostic.heartbeat);
+         //   console.log("Client ="  + states[actClient[0].name].name + ", State = " + states[actClient[0].name].diagnostic.heartbeat);
             break;
-        case "sensor:":
-            console.log("Client = " + states[actClient[0].name].name + ", Type = " +actType + ", Value = " + actValue);
+        case "sensors":
+           // console.log("Client = " + actClient[0].name + ", Type = " +actType + ", Value = " + message);
+            switch (actClient[0].name) {
+                case("DUST_HH"):
+
+                    DustDensity.push(message.toString())
+                    if(DustDensity.length > 15){
+                    DustDensity.shift();
+                    }
+                    break;
+            }
+
             break;
 
 
@@ -85,6 +140,20 @@ function processMQTT(topic,message){
 
 };
 
+
+module.exports.InitInfluxDB= function(){
+
+   InfluxClient = new Influx.InfluxDB({
+      host: '192.168.1.143',
+      port: '8086',
+      protocol: 'http',
+      username: 'mqtt',
+      password: 'tooltime',
+      database: 'mqtt_db',
+
+  })
+
+};
 
 module.exports.InitStates= function() {
 console.log("Initializing Clients");
@@ -233,7 +302,7 @@ else {
                     break;
 
             }
-            callUrl(options);
+           // callUrl(options);
 
             break;
         case "MQTT":
